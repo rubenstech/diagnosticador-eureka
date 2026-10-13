@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosticador Eureka | Inmunidad Operativa & Escudo Fiscal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                            950: '#052e16',
+                        },
+                        darkBg: '#0b0f19',
+                        cardBg: '#111827',
+                        cardBorder: '#1f2937'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        @media print {
+            body { background: white !important; color: black !important; }
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            .print-card { border: 1px solid #cbd5e1 !important; background: white !important; color: black !important; box-shadow: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-100 min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+    <!-- HEADER EJECUTIVO -->
+    <header class="border-b border-cardBorder bg-cardBg/80 backdrop-blur-md sticky top-0 z-50 no-print">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center shadow-lg shadow-brand-900/40">
+                    <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+                        EUREKA BUSINESS <span class="text-xs px-2 py-0.5 rounded-full bg-brand-950 text-brand-400 border border-brand-800">B2B Engine</span>
+                    </h1>
+                    <p class="text-xs text-slate-400">Arquitectura de Ecosistemas Cognitivos & Escudo Fiscal</p>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-4 text-xs text-slate-400 font-medium">
+                <span class="flex items-center gap-1.5"><i data-lucide="zap" class="w-4 h-4 text-amber-400"></i> Diagnóstico en 3 min</span>
+                <span class="flex items-center gap-1.5"><i data-lucide="lock" class="w-4 h-4 text-brand-400"></i> Protocolo IP-SHIELD™</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow w-full">
+
+        <!-- PASO 1: ONBOARDING Y DATOS DEL PROSPECTO -->
+        <div id="step-1" class="bg-cardBg border border-cardBorder rounded-2xl p-6 md:p-8 shadow-2xl transition-all duration-300">
+            <div class="max-w-xl mx-auto text-center space-y-3 mb-8">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-400 bg-brand-950/80 px-3 py-1 rounded-full border border-brand-800">Evaluación de Inmunidad Operativa</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight">Descubra su Fuga de Fricción y Oportunidad Fiscal</h2>
+                <p class="text-sm text-slate-400">Complete los siguientes datos institucionales para inicializar el motor de diagnóstico analítico Eureka.</p>
+            </div>
+
+            <form id="onboarding-form" class="space-y-5 max-w-lg mx-auto">
+                <div class="space-y-1.5">
+                    <label class="text-xs font-semibold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+                        <i data-lucide="user" class="w-4 h-4 text-brand-400"></i> Nombre del Evaluador / Directivo
+                    </label>
+                    <input type="text" id="evaluatorName" required placeholder="Ej. Arq. Rubens Temoche" 
+                        class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="text-xs font-semibold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+                        <i data-lucide="building-2" class="w-4 h-4 text-brand-400"></i> Empresa / Entidad / Institución
+                    </label>
+                    <input type="text" id="companyName" required placeholder="Ej. SmartWorld AI / RUC 20..." 
+                        class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-semibold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+                            <i data-lucide="briefcase" class="w-4 h-4 text-brand-400"></i> Sector de Actividad
+                        </label>
+                        <select id="sector" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                            <option value="Pyme">Pyme / Empresa Privada</option>
+                            <option value="Corporativo RUC 20">Corporativo / RUC 20 (Grande)</option>
+                            <option value="Gubernamental / Institucional">Sector Público / Municipalidad</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-semibold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+                            <i data-lucide="users" class="w-4 h-4 text-brand-400"></i> Tamaño del Equipo Clave
+                        </label>
+                        <input type="number" id="teamSize" min="1" max="500" value="5" required
+                            class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                    </div>
+                </div>
+
+                <!-- CAMPO DE WHATSAPP NUEVO -->
+                <div class="space-y-1.5">
+                    <label class="text-xs font-semibold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+                        <i data-lucide="phone-call" class="w-4 h-4 text-emerald-400"></i> Número de WhatsApp (Para enviar reporte / agenda)
+                    </label>
+                    <input type="tel" id="whatsapp" required placeholder="Ej. +51 987 654 321" 
+                        class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                </div>
+
+                <div class="pt-4">
+                    <button type="submit" class="w-full bg-gradient-to-r from-brand-600 to-emerald-500 hover:from-brand-500 hover:to-emerald-400 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-brand-900/40 transition-all flex items-center justify-center gap-2 group">
+                        <span>Iniciar Diagnóstico Eureka</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- PASO 2: CUESTIONARIO DINÁMICO (SCORECARD) -->
+        <div id="step-2" class="hidden space-y-6">
+            <!-- Barra de Progreso -->
+            <div class="bg-cardBg border border-cardBorder rounded-2xl p-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div id="question-counter" class="w-10 h-10 rounded-xl bg-brand-950 text-brand-400 font-extrabold flex items-center justify-center border border-brand-800 text-sm">
+                        1/5
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-white" id="question-category-title">Soberanía del Know-How</h3>
+                        <p class="text-xs text-slate-400">Evaluando dimensión estratégica</p>
+                    </div>
+                </div>
+                <div class="w-32 md:w-48 bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                    <div id="progress-bar" class="bg-brand-500 h-full w-1/5 transition-all duration-300"></div>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Pregunta -->
+            <div class="bg-cardBg border border-cardBorder rounded-2xl p-6 md:p-8 shadow-2xl space-y-6">
+                <h4 id="question-text" class="text-lg md:text-xl font-bold text-white leading-snug">
+                    ¿Qué porcentaje de los procesos clave de su área depende exclusivamente de la memoria o experiencia de 1 o 2 personas clave?
+                </h4>
+
+                <div id="options-container" class="space-y-3">
+                    <!-- Opciones inyectadas por JS -->
+                </div>
+
+                <div class="flex justify-between pt-4 border-t border-slate-800">
+                    <button id="prev-btn" onclick="prevQuestion()" class="hidden px-5 py-2.5 rounded-xl border border-slate-700 hover:bg-slate-800 text-sm font-semibold text-slate-300 transition-all flex items-center gap-2">
+                        <i data-lucide="arrow-left" class="w-4 h-4"><span>Anterior</span></i>
+                    </button>
+                    <div class="ml-auto">
+                        <button id="next-btn" onclick="nextQuestion()" disabled class="bg-slate-800 text-slate-500 cursor-not-allowed px-6 py-2.5 rounded-xl text-sm font-bold transition-all flex items-center gap-2">
+                            <span>Siguiente</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PASO 3: PANEL DE RESULTADOS Y REPORTES -->
+        <div id="step-3" class="hidden space-y-6">
+            
+            <!-- Alerta Superior de Estado -->
+            <div class="bg-gradient-to-r from-brand-950/80 to-cardBg border border-brand-800 rounded-2xl p-6 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-600/20 border border-brand-500/40 flex items-center justify-center shrink-0">
+                        <i data-lucide="shield-alert" class="w-8 h-8 text-brand-400"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-bold uppercase tracking-widest text-brand-400">Diagnóstico Concluido</span>
+                            <span id="res-sector-tag" class="text-xs px-2 py-0.5 rounded bg-slate-800 text-slate-300">Pyme</span>
+                        </div>
+                        <h2 class="text-xl md:text-2xl font-extrabold text-white" id="res-company-title">Empresa Evaluada</h2>
+                        <p class="text-xs text-slate-400">Evaluado por: <span id="res-evaluator-name" class="text-slate-200 font-medium">--</span></p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 w-full md:w-auto">
+                    <button onclick="window.print()" class="flex-1 md:flex-none bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-bold py-3 px-4 rounded-xl transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="printer" class="w-4 h-4"></i>
+                        <span>Imprimir / PDF</span>
+                    </button>
+                    <button onclick="bookStrategicSession()" class="flex-1 md:flex-none bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-3 px-4 rounded-xl shadow-lg shadow-emerald-900/40 transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="message-square" class="w-4 h-4"></i>
+                        <span>Agendar vía WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid de Indicadores Clave -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                
+                <!-- Índice de Inmunidad -->
+                <div class="bg-cardBg border border-cardBorder rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Índice de Inmunidad Operativa</span>
+                        <div class="mt-3 flex items-baseline gap-2">
+                            <span id="score-number" class="text-5xl font-extrabold text-white">47</span>
+                            <span class="text-sm font-bold text-slate-400">/ 100 pts</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800">
+                        <div id="maturity-badge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30">
+                            <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
+                            <span id="maturity-text">NIVEL 2: DOCUMENTADO PASIVO</span>
+                        </div>
+                        <p id="maturity-desc" class="text-xs text-slate-400 mt-2">Existen procesos y documentos, pero están dispersos o desactualizados.</p>
+                    </div>
+                </div>
+
+                <!-- Costo de la Inacción -->
+                <div class="bg-cardBg border border-cardBorder rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Costo de la Inacción (Fricción)</span>
+                        <div class="mt-3">
+                            <span id="cost-monthly" class="text-3xl md:text-4xl font-extrabold text-red-400">S/ 12,960</span>
+                            <span class="text-xs text-slate-400 block mt-1">Pérdida estimada mensual en HH / retrabajos</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800">
+                        <p class="text-xs text-slate-400">Pérdida Anual Proyectada:</p>
+                        <p id="cost-yearly" class="text-sm font-bold text-white">S/ 155,520 al año</p>
+                    </div>
+                </div>
+
+                <!-- Escudo Fiscal B2B -->
+                <div class="bg-cardBg border border-cardBorder rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Escudo Fiscal B2B (Ley 30309)</span>
+                        <div class="mt-3">
+                            <span id="tax-shield-amount" class="text-3xl md:text-4xl font-extrabold text-emerald-400">S/ 22,000</span>
+                            <span id="tax-shield-label" class="text-xs text-slate-400 block mt-1">Ahorro fiscal vía deducción I+D+i (190%)</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800">
+                        <p class="text-xs text-slate-400">Retorno Neto Estimado:</p>
+                        <p class="text-sm font-bold text-emerald-400">+310% ROI Est.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Desglose y Solución Recomendada -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Desglose por Dimensiones -->
+                <div class="bg-cardBg border border-cardBorder rounded-2xl p-6 shadow-xl space-y-4">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-white flex items-center gap-2">
+                        <i data-lucide="bar-chart-3" class="w-4 h-4 text-brand-400"></i> Desglose por Dimensiones Estratégicas
+                    </h3>
+                    <div id="dimensions-breakdown" class="space-y-3 pt-2">
+                        <!-- Inyectado por JS -->
+                    </div>
+                </div>
+
+                <!-- Servicio Recomendado -->
+                <div class="bg-cardBg border border-cardBorder rounded-2xl p-6 shadow-xl flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-400 bg-brand-950 px-2.5 py-1 rounded-md border border-brand-800">Servicio Recomendado</span>
+                        <h3 id="rec-title" class="text-xl font-bold text-white mt-3">IP-SHIELD™ Fast Track 14D</h3>
+                        <p id="rec-desc" class="text-xs text-slate-300 mt-2 leading-relaxed">
+                            Programa acelerado de 14 días diseñado para extraer, sistematizar y blindar jurídicamente el know-how crítico de la empresa antes de sufrir fugas de talento o sanciones normativas.
+                        </p>
+                    </div>
+                    <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 space-y-2">
+                        <div class="flex items-center justify-between text-xs text-slate-400">
+                            <span>Plazo de Implementación:</span>
+                            <span class="text-white font-bold">14 Días Hábiles</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-slate-400">
+                            <span>Soporte Tecnológico:</span>
+                            <span class="text-white font-bold">Google Workspace / Gems</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-slate-400">
+                            <span>Comprobante / Contratación:</span>
+                            <span class="text-white font-bold">Recibo por Honorarios (4ta)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center pt-4">
+                <button onclick="resetDiagnostic()" class="text-xs font-semibold text-slate-400 hover:text-white underline transition-all">
+                    ← Realizar una nueva evaluación diagnóstica
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-cardBorder bg-cardBg/80 py-4 text-center text-xs text-slate-500 no-print">
+        <p>Eureka Business Engine &bull; Arquitectura de Ecosistemas Cognitivos de Rubens Temoche &bull; SmartWorld AI</p>
+    </footer>
+
+    <!-- SCRIPT DE LÓGICA Y GOOGLE SHEETS WEBHOOK -->
+    <script>
+        // CONFIGURACIÓN DE GOOGLE SHEETS WEBHOOK
+        // Pega aquí la URL de tu Webhook de Google Apps Script tras desplegarlo:
+        const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwUcTfKpYr3HruN3rCI3hnPUyvjzyjvmcrm_WtFzxFvRkLkgzn9TyFhSsrSoPXdamkh/exec'; 
+
+        // BANCO DE PREGUNTAS DEL SCORECARD EUREKA
+        const questions = [
+            {
+                category: "Soberanía del Know-How",
+                title: "¿Qué porcentaje de los procesos clave de su área depende exclusivamente de la memoria o experiencia de 1 o 2 personas clave?",
+                options: [
+                    { text: "Más del 70% (Alto riesgo de amnesia corporativa si alguien renuncia)", points: 2, friction: 6 },
+                    { text: "Entre 30% y 70% (Dependencia moderada de especialistas)", points: 10, friction: 3 },
+                    { text: "Menos del 30% (Sistemas documentados y distribuidos)", points: 20, friction: 1 }
+                ]
+            },
+            {
+                category: "Fricción de Tiempo y Horas/Hombre",
+                title: "¿Cuántas horas a la semana dedica su equipo a tareas repetitivas como copiar datos a mano, buscar manuales o redactar informes desde cero?",
+                options: [
+                    { text: "Más de 15 horas semanales por colaborador (Fricción crítica)", points: 2, friction: 10 },
+                    { text: "Entre 5 y 15 horas semanales (Fricción moderada)", points: 10, friction: 5 },
+                    { text: "Menos de 5 horas semanales (Procesos optimizados)", points: 20, friction: 1 }
+                ]
+            },
+            {
+                category: "Velocidad de Respuesta y Cumplimiento Normativo",
+                title: "¿Cuánto tiempo toma encontrar y validar información histórica, directivas o expedientes ante un requerimiento urgente o auditoría?",
+                options: [
+                    { text: "Días enteros de búsqueda o incertidumbre documental", points: 2, friction: 5 },
+                    { text: "Varias horas revisando archivos PDF dispersos", points: 10, friction: 3 },
+                    { text: "Segundos, mediante consulta instantánea en un repositorio inteligente", points: 20, friction: 0 }
+                ]
+            },
+            {
+                category: "Blindaje de Propiedad Intelectual",
+                title: "¿Cómo se gestiona el conocimiento y los manuales operativos de la empresa frente a la rotación de personal?",
+                options: [
+                    { text: "No existen manuales; el conocimiento se va con las personas", points: 2, friction: 4 },
+                    { text: "Existen manuales en PDF desactualizados que nadie lee", points: 10, friction: 2 },
+                    { text: "Contamos con un 'Búnker Cognitivo' activo y actualizado permanentemente", points: 20, friction: 0 }
+                ]
+            },
+            {
+                category: "Optimización Fiscal y Financiera",
+                title: "¿Su empresa aprovecha los incentivos tributarios de deducción adicional (190%-240% Ley CONCYTEC) para innovación y tecnología?",
+                options: [
+                    { text: "No los aplicamos y pagamos 100% de Impuesto a la Renta", points: 2, friction: 0 },
+                    { text: "Conocemos el beneficio pero no tenemos la carpeta técnica ni contable", points: 10, friction: 0 },
+                    { text: "Ya aplicamos escudos fiscales y deducciones de ley activamente", points: 20, friction: 0 }
+                ]
+            }
+        ];
+
+        let currentQuestion = 0;
+        let evalData = {
+            evaluatorName: '',
+            companyName: '',
+            sector: 'Pyme',
+            teamSize: 5,
+            whatsapp: '',
+            answers: []
+        };
+
+        // INICIALIZAR ICONOS
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            
+            // Listener del formulario inicial
+            document.getElementById('onboarding-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                evalData.evaluatorName = document.getElementById('evaluatorName').value;
+                evalData.companyName = document.getElementById('companyName').value;
+                evalData.sector = document.getElementById('sector').value;
+                evalData.teamSize = parseInt(document.getElementById('teamSize').value) || 5;
+                evalData.whatsapp = document.getElementById('whatsapp').value;
+
+                // Pasar al paso 2
+                document.getElementById('step-1').classList.add('hidden');
+                document.getElementById('step-2').classList.remove('hidden');
+                loadQuestion();
+            });
+        });
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById('question-counter').innerText = `${currentQuestion + 1}/5`;
+            document.getElementById('question-category-title').innerText = q.category;
+            document.getElementById('question-text').innerText = q.title;
+            document.getElementById('progress-bar').style.width = `${((currentQuestion + 1) / 5) * 100}%`;
+
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const isSelected = evalData.answers[currentQuestion] && evalData.answers[currentQuestion].index === idx;
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `w-full text-left p-4 rounded-xl border transition-all flex items-center justify-between ${
+                    isSelected 
+                        ? 'bg-brand-950/60 border-brand-500 text-white shadow-md shadow-brand-950' 
+                        : 'bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700'
+                }`;
+                btn.innerHTML = `
+                    <span class="text-sm font-medium pr-4">${opt.text}</span>
+                    <div class="w-5 h-5 rounded-full border ${isSelected ? 'border-brand-500 bg-brand-500 flex items-center justify-center' : 'border-slate-700'}">
+                        ${isSelected ? '<div class="w-2 h-2 rounded-full bg-white"></div>' : ''}
+                    </div>
+                `;
+                btn.onclick = () => selectOption(idx, opt.points, opt.friction);
+                container.appendChild(btn);
+            });
+
+            // Botones navegación
+            const prevBtn = document.getElementById('prev-btn');
+            if (currentQuestion > 0) prevBtn.classList.remove('hidden');
+            else prevBtn.classList.add('hidden');
+
+            updateNextButtonState();
+        }
+
+        function selectOption(index, points, frictionHrs) {
+            evalData.answers[currentQuestion] = { index, points, frictionHrs };
+            loadQuestion();
+        }
+
+        function updateNextButtonState() {
+            const nextBtn = document.getElementById('next-btn');
+            if (evalData.answers[currentQuestion] !== undefined) {
+                nextBtn.disabled = false;
+                nextBtn.className = "bg-gradient-to-r from-brand-600 to-emerald-500 hover:from-brand-500 hover:to-emerald-400 text-white px-6 py-2.5 rounded-xl text-sm font-bold shadow-lg shadow-brand-900/40 transition-all flex items-center gap-2 cursor-pointer";
+            } else {
+                nextBtn.disabled = true;
+                nextBtn.className = "bg-slate-800 text-slate-500 cursor-not-allowed px-6 py-2.5 rounded-xl text-sm font-bold transition-all flex items-center gap-2";
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                calculateResults();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+            }
+        }
+
+        function calculateResults() {
+            // Calcular puntaje total (máx 100)
+            const totalPoints = evalData.answers.reduce((acc, a) => acc + a.points, 0);
+            
+            // Calcular horas de fricción totales del equipo
+            const totalFrictionHrsPerCollab = evalData.answers.reduce((acc, a) => acc + a.frictionHrs, 0);
+            
+            // Monetización de Fricción: Costo Hora Promedio S/ 45/hr (Perfil profesional/directivo)
+            const HOURLY_RATE = 45;
+            const monthlyLoss = totalFrictionHrsPerCollab * evalData.teamSize * HOURLY_RATE * 4.2; 
+            const yearlyLoss = monthlyLoss * 12;
+
+            // Escudo Fiscal Ley 30309 según sector
+            let taxDeductionRate = "190%";
+            let estimatedTaxShield = 0;
+
+            if (evalData.sector === 'Corporativo RUC 20') {
+                taxDeductionRate = "240%";
+                estimatedTaxShield = Math.max(yearlyLoss * 0.40 * 0.35, 45000);
+            } else if (evalData.sector === 'Pyme') {
+                taxDeductionRate = "190%";
+                estimatedTaxShield = Math.max(yearlyLoss * 0.30 * 0.295, 22000);
+            } else {
+                taxDeductionRate = "Optimización Presupuestal";
+                estimatedTaxShield = yearlyLoss * 0.35;
+            }
+
+            // Definir Nivel de Madurez
+            let maturityTitle = "";
+            let maturityDesc = "";
+            let maturityClass = "";
+            let recTitle = "";
+            let recDesc = "";
+
+            if (totalPoints <= 40) {
+                maturityTitle = "NIVEL 1: VACIADO VOLÁTIL";
+                maturityDesc = "Riesgo crítico de amnesia corporativa. El know-how depende de personas clave y existe alta fricción operativa.";
+                maturityClass = "bg-red-500/10 text-red-400 border-red-500/30";
+                recTitle = "IP-SHIELD™ Fast Track (Urgente 14D)";
+                recDesc = "Implementación inmediata de búnkeres cognitivos y extracción de know-how crítico en 14 días sobre Google Workspace.";
+            } else if (totalPoints <= 70) {
+                maturityTitle = "NIVEL 2: DOCUMENTADO PASIVO";
+                maturityDesc = "Existen procesos y manuales dispersos o estáticos. Persiste fricción en horas/hombre y pérdida de margen.";
+                maturityClass = "bg-amber-500/10 text-amber-400 border-amber-500/30";
+                recTitle = "IP-SHIELD™ Fast Track 14D";
+                recDesc = "Programa acelerado de 14 días para transformar manuales pasivos en Asistentes Inteligentes (Living BlueBooks).";
+            } else {
+                maturityTitle = "NIVEL 3: ECOSISTEMA BLINDADO";
+                maturityDesc = "Estructura avanzada con buena soberanía, listo para escalar hacia un Escudo Fiscal 360° con CONCYTEC.";
+                maturityClass = "bg-emerald-500/10 text-emerald-400 border-emerald-500/30";
+                recTitle = "Escudo Fiscal 360° (Ley 30309)";
+                recDesc = "Estructuración de consorcio y carpeta técnica para deducción tributaria de hasta el 240% en I+D+i.";
+            }
+
+            // Renderizar en UI
+            document.getElementById('step-2').classList.add('hidden');
+            document.getElementById('step-3').classList.remove('hidden');
+
+            document.getElementById('res-evaluator-name').innerText = evalData.evaluatorName;
+            document.getElementById('res-sector-tag').innerText = evalData.sector;
+            document.getElementById('res-company-title').innerText = evalData.companyName;
+
+            document.getElementById('score-number').innerText = totalPoints;
+            const badge = document.getElementById('maturity-badge');
+            badge.className = `inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold border ${maturityClass}`;
+            document.getElementById('maturity-text').innerText = maturityTitle;
+            document.getElementById('maturity-desc').innerText = maturityDesc;
+
+            document.getElementById('cost-monthly').innerText = `S/ ${Math.round(monthlyLoss).toLocaleString()}`;
+            document.getElementById('cost-yearly').innerText = `S/ ${Math.round(yearlyLoss).toLocaleString()} al año`;
+
+            document.getElementById('tax-shield-amount').innerText = `S/ ${Math.round(estimatedTaxShield).toLocaleString()}`;
+            document.getElementById('tax-shield-label').innerText = `Ahorro fiscal vía deducción I+D+i (${taxDeductionRate})`;
+
+            document.getElementById('rec-title').innerText = recTitle;
+            document.getElementById('rec-desc').innerText = recDesc;
+
+            // Desglose por dimensiones
+            const breakdownContainer = document.getElementById('dimensions-breakdown');
+            breakdownContainer.innerHTML = '';
+            questions.forEach((q, idx) => {
+                const ans = evalData.answers[idx];
+                const row = document.createElement('div');
+                row.className = "flex items-center justify-between text-xs py-1.5 border-b border-slate-800/60";
+                row.innerHTML = `
+                    <span class="text-slate-300 font-medium pr-2">${q.category}</span>
+                    <span class="font-bold px-2 py-0.5 rounded ${ans.points > 10 ? 'bg-emerald-950 text-emerald-400 border border-emerald-800' : 'bg-red-950 text-red-400 border border-red-800'}">${ans.points}/20 pts</span>
+                `;
+                breakdownContainer.appendChild(row);
+            });
+
+            // ENVIAR LEAD A GOOGLE SHEETS AUTOMÁTICAMENTE
+            sendLeadToGoogleSheets({
+                evaluatorName: evalData.evaluatorName,
+                companyName: evalData.companyName,
+                sector: evalData.sector,
+                whatsapp: evalData.whatsapp,
+                maturityLevel: maturityTitle,
+                score: totalPoints,
+                yearlyLoss: Math.round(yearlyLoss),
+                estimatedTaxShield: Math.round(estimatedTaxShield)
+            });
+
+            lucide.createIcons();
+        }
+
+        function sendLeadToGoogleSheets(payload) {
+            if (!WEBHOOK_URL || WEBHOOK_URL.includes('AKfycbyiEshc')) return; // Evita error si no se configuró URL aún
+            
+            fetch(WEBHOOK_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).catch(err => console.log('Lead registrado localmente', err));
+        }
+
+        function bookStrategicSession() {
+            const message = encodeURIComponent(`Hola Rubens, completé el Diagnosticador Eureka para la empresa *${evalData.companyName}*. Mi Índice de Inmunidad Operativa es de ${document.getElementById('score-number').innerText}/100 y el costo de inacción proyectado es de ${document.getElementById('cost-monthly').innerText}/mes. Me gustaría agendar la sesión estratégica.`);
+            window.open(`https://wa.me/51993224286?text=${message}`, '_blank');
+        }
+
+        function resetDiagnostic() {
+            currentQuestion = 0;
+            evalData.answers = [];
+            document.getElementById('step-3').classList.add('hidden');
+            document.getElementById('step-1').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
